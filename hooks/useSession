@@ -1,0 +1,37 @@
+import { useState, useEffect } from "react"
+import type { Session } from "next-auth"
+import { getSession } from "next-auth/react"
+
+type SessionStatus = "loading" | "authenticated" | "unauthenticated"
+
+export function useSession() {
+  const [session, setSession] = useState<Session | null>(null)
+  const [status, setStatus] = useState<SessionStatus>("loading")
+
+  useEffect(() => {
+    let isMounted = true
+
+    const fetchSession = async () => {
+      setStatus("loading")
+      const data = await getSession()
+
+      if (!isMounted) return
+
+      if (data) {
+        setSession(data)
+        setStatus("authenticated")
+      } else {
+        setSession(null)
+        setStatus("unauthenticated")
+      }
+    }
+
+    fetchSession()
+
+    return () => {
+      isMounted = false
+    }
+  }, [])
+
+  return { data: session, status }
+}

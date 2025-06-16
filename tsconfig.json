@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "target": "ES2017",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "baseUrl": ".",                           // <- BU ICHKARIDA TURISHI KERAK
+    "paths": {
+      "@/*": ["./*"],
+      "@/types": ["types"],
+      "@/types/*": ["types/*"]
+    },
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "types", "app/landing/product", "lib/getRequestConfig.ts", "middleware.ts", "next-intl.config.ts", "next.config.mjs", "app/landing/auth", "app/landing/product/[slug]"],
+  "exclude": ["node_modules"]
+}
