@@ -18,7 +18,7 @@ const dummyProducts = [
     price: 100,
     slug: "/product/test-product-1",
     is_new: true,
-    discount: true,
+    discount: 20, // ✅ number emas boolean
   },
   {
     id: 2,
@@ -27,6 +27,7 @@ const dummyProducts = [
     price: 100,
     slug: "/product/test-product-1",
     is_new: true,
+    discount: 0, // ✅ even if no discount, use 0
   },
   {
     id: 3,
@@ -35,7 +36,7 @@ const dummyProducts = [
     price: 100,
     slug: "/product/test-product-1",
     is_new: true,
-    discount: true,
+    discount: 15,
   },
   {
     id: 4,
@@ -44,10 +45,10 @@ const dummyProducts = [
     price: 100,
     slug: "/product/test-product-1",
     is_new: true,
+    discount: 0,
   },
 ]
 
-// Type'lar
 interface Product {
   id: number | string
   name: string
