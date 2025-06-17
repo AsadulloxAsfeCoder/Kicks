@@ -117,12 +117,12 @@ const ProductDetal = () => {
     <main className="p-4 md:p-14">
       {/* Desktop View */}
       <div className="hidden md:flex gap-10">
-        <div>
-          <ul className="flex flex-wrap gap-4 mb-4">
+        <div><div className="rounded-[48px] overflow-hidden">
+          <ul className="flex flex-wrap gap-4 mb-4 ">
             {images.slice(0, 2).map((image) => (
               <li key={image.id} className="w-full md:w-[calc(50%-0.5rem)]">
                 <Image
-                  className={`rounded-tl-[48px] rounded-tr-[48px] w-full h-auto object-cover`}
+                  className={` w-full h-auto object-cover`}
                   src={image.src}
                   alt={image.alt}
                   width={image.width}
@@ -136,7 +136,7 @@ const ProductDetal = () => {
             {images.slice(2, 4).map((image) => (
               <li key={image.id} className="w-full md:w-[calc(50%-0.5rem)]">
                 <Image
-                  className={`rounded-bl-[48px] rounded-br-[48px] w-full h-auto object-cover`}
+                  className={`  w-full h-auto object-cover`}
                   src={image.src}
                   alt={image.alt}
                   width={image.width}
@@ -147,7 +147,7 @@ const ProductDetal = () => {
             ))}
           </ul>
         </div>
-
+        </div>
         <div className="w-[430px]">
           <Link href="/" className={cn(buttonVariants({ variant: "blue" }), "w-[106px] h-[38px] rounded-[12px] text-[12px] font-semibold lowercase mb-3")}>
             New Release
