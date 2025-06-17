@@ -20,6 +20,15 @@ import {
   FormItem,
   FormMessage,
 } from "@/components/ui/form"
+import Image from "next/image"
+
+// Auth response tipini aniqlaymiz
+type AuthResponse = {
+  error?: string
+  ok: boolean
+  status: number
+  url?: string | null
+}
 
 const formSchema = z.object({
   email: z
@@ -56,25 +65,31 @@ const LoginForm = () => {
         password: data.password,
         redirect: false,
         callbackUrl,
-      })
+      }) as AuthResponse | undefined
 
-      if (result?.error) {
+      if (!result) {
+        throw new Error("Serverdan javob kelmadi")
+      }
+
+      if (result.error) {
         form.setError("email", {
           type: "manual",
-          message: "Incorrect email or password",
+          message: "Noto'g'ri email yoki parol",
         })
         form.setError("password", {
           type: "manual",
-          message: "Incorrect email or password",
+          message: "Noto'g'ri email yoki parol",
         })
-      } else {
+      } else if (result.ok) {
         router.push(callbackUrl)
+      } else {
+        throw new Error("Autentifikatsiya muvaffaqiyatsiz tugadi")
       }
     } catch (error) {
-      console.error("Login error:", error)
+      console.error("Kirish xatosi:", error)
       form.setError("root", {
         type: "manual",
-        message: "Tizimda xatolik yuz berdi. Keyinroq urinib ko'ring.",
+        message: "Tizimda xatolik yuz berdi. Iltimos, keyinroq urinib ko'ring.",
       })
     } finally {
       setIsLoading(false)
@@ -88,12 +103,12 @@ const LoginForm = () => {
   return (
     <div className="space-y-6">
       <div className="space-y-2">
-        <h1 className="text-3xl font-bold">Login</h1>
+        <h1 className="text-3xl font-bold">Tizimga kirish</h1>
         <Link
           href="/landing/auth/forget-password"
           className="text-sm text-neutral-800 hover:underline block"
         >
-          Forgot your password?
+          Parolingizni unutdingizmi?
         </Link>
       </div>
 
@@ -132,7 +147,7 @@ const LoginForm = () => {
                 <FormControl>
                   <Input
                     type="password"
-                    placeholder="Password"
+                    placeholder="Parol"
                     disabled={isLoading}
                     className="h-12 border-neutral-300 bg-white rounded-md"
                     {...field}
@@ -158,9 +173,9 @@ const LoginForm = () => {
                 </FormControl>
                 <div>
                   <Label htmlFor="rememberMe" className="text-sm font-normal">
-                    Remember me - applies to all access options.
+                    Meni eslab qol
                   </Label>
-                  <p className="text-sm text-neutral-600">More information</p>
+                  <p className="text-sm text-neutral-600">Qo'shimcha ma'lumot</p>
                 </div>
               </FormItem>
             )}
@@ -171,9 +186,9 @@ const LoginForm = () => {
             disabled={isLoading}
             className="w-full h-12 bg-neutral-900 hover:bg-black text-white flex justify-between items-center"
           >
-            <span className="sr-only">Sign in</span>
+            <span className="sr-only">Tizimga kirish</span>
             <span className="mx-auto font-medium">
-              {isLoading ? "ENTERING..." : "LOG IN BY EMAIL"}
+              {isLoading ? "KIRILMOQDA..." : "EMAIL ORQALI KIRISH"}
             </span>
             <ArrowRight className="h-4 w-4" />
           </Button>
@@ -188,10 +203,12 @@ const LoginForm = () => {
                 className="h-12 border-neutral-300 flex justify-center"
                 onClick={() => handleSocialSignIn(provider)}
               >
-                <img
+                <Image
                   src={`/icons/${provider}.svg`}
-                  alt={`${provider} logo`}
+                  alt={`${provider} logotipi`}
                   className="h-6 w-6"
+                  width={24}
+                  height={24}
                 />
               </Button>
             ))}
@@ -201,11 +218,12 @@ const LoginForm = () => {
             href="/auth/register"
             className="text-sm text-neutral-800 hover:underline block"
           >
-            Don&apos;t have an account? Sign up
+            Akkauntingiz yo'qmi? Ro'yxatdan o'ting
           </Link>
 
           <p className="text-xs text-neutral-700 mt-4">
-            By clicking &quot;Login&quot; you agree to our Terms of Use, Privacy Policy and Terms & Conditions.
+            "Kirish" tugmasini bosish orqali siz Foydalanish shartlari, Maxfiylik siyosati va 
+            Shartlar & Qoidalarimizga rozilik bildirasiz.
           </p>
         </form>
       </Form>
