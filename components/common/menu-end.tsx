@@ -18,7 +18,7 @@ const   MenuEnd = () => {
       {session.status === "authenticated" ? (
         <UserDropdownMenu />
       ) : (
-        <Link href="/auth/login">
+        <Link href="/landing/auth/login">
           <div className="cursor-pointer">
             <UserIcon />
           </div>
