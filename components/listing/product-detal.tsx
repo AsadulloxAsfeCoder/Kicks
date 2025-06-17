@@ -22,6 +22,7 @@ import {
   CarouselContent,
   CarouselItem,
 } from "@/components/ui/carousel";
+import AxiosInstance from "@/lib/axios";
 
 const fallbackColors = ["Red", "Blue", "White", "Black", "Pink", "Orange", "Yellow"];
 const fallbackSizes = ["42", "41", "39", "38", "43", "45", "44"];
@@ -33,7 +34,7 @@ const images = [
   { id: 4, src: "/images/detal4.jpg", alt: "Image 4" },
 ];
 
-const ProductDetal = ({ params: { slug } }: { params: { slug: string } }) => {
+const ProductDetal = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const carouselApi = useRef<any>(null);
   const [product, setProduct] = useState<{ title: string; price: number } | null>(null);
@@ -66,17 +67,17 @@ const handleAddToCart = () => {
 useEffect(() => {
   const fetchProduct = async () => {
     try {
-      const res = await fetch(`/api/products/${slug}`);
-      const data = await res.json();
-      setProduct(data);
+      const res = await AxiosInstance.get('/api/products/');
+      setProduct(res.data); // Axiosda 'res.data' ni ishlatamiz
     } catch (error) {
       console.error("Error fetching product:", error);
-      setProduct(null); // fallback trigger
+      setProduct(null); // fallback
     }
   };
 
   fetchProduct();
-}, [slug]);
+}, []);
+
 
 
   useEffect(() => {

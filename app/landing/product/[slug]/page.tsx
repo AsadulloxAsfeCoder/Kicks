@@ -6,21 +6,13 @@ import Footer from "@/components/ui/footer"
 import ProductDetal from "@/components/listing/product-detal"
 import ReledetProduct from "@/components/listing/releted-product"
 
-interface PageProps {
-  params: {
-    slug: string
-  }
-}
-
-export default function ProductDetailPage({ params }: PageProps) {
-  const { slug } = params
-
+export default function ProductDetailPage() {
   return (
     <main>
       <Siteheader />
       <section className="py-8">
         <div className="container mx-auto">
-          <ProductDetal params={{ slug }} />
+          <ProductDetal  />
         </div>
       </section>
       <section>
