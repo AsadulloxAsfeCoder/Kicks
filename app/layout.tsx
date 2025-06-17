@@ -1,9 +1,6 @@
 import { Rubik } from "next/font/google";
-import './styles/global.css';
-import RootProvider from "@/components/common/provider";
-import { Toaster } from 'sonner';
-import { CartProvider } from "@/contexts/CartContext";
-import { CookiesProvider } from "react-cookie"; // 🍪 SHU QATORNI QO‘SHING
+import "./styles/global.css";
+import ClientWrapper from "@/components/common/client-wrapper"; // ✅ Faqat buni ishlatamiz
 
 const rubik = Rubik({
   subsets: ["latin"],
@@ -19,19 +16,12 @@ export const metadata = {
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en">
       <body className={`font-sans antialiased bg-gray-300 ${rubik.className}`}>
-        <CookiesProvider> {/* 🍪 CookiesProvider bilan o‘raldi */}
-          <RootProvider>
-            <CartProvider>
-              {children}
-              <Toaster />
-            </CartProvider>
-          </RootProvider>
-        </CookiesProvider>
+        <ClientWrapper>{children}</ClientWrapper> {/* ✅ SHU */}
       </body>
     </html>
   );
