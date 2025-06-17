@@ -316,26 +316,6 @@ const ProductDetal = () => {
               )}
             </AccordionContent>
           </AccordionItem>
-
-          <AccordionItem value="sizes">
-            <AccordionTrigger className="text-base font-semibold uppercase">
-              Size
-            </AccordionTrigger>
-            <AccordionContent>
-              <ul className="space-y-3">
-                {fallbackSizes.map((size, i) => (
-                  <li key={i} className="flex items-center space-x-2">
-                    <Checkbox
-                      id={`size-${i}`}
-                      checked={selectedFilters.sizes.includes(size)}
-                      onCheckedChange={() => handleCheckboxChange("sizes", size)}
-                    />
-                    <label htmlFor={`size-${i}`} className="text-sm">{size}</label>
-                  </li>
-                ))}
-              </ul>
-            </AccordionContent>
-          </AccordionItem>
         </Accordion>
 
         <div className="mt-6">
