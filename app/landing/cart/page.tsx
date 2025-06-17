@@ -6,20 +6,22 @@ import React from 'react'
 
 interface ProductDetailPageProps {
   params: {
-    slug: string;
+    color: string;
   };
 }
 
-function ChekoutPage({ color }: { color: string }) {
-   const productColor = color; 
+function CheckoutPage({ params }: ProductDetailPageProps) {
+  const productColor = params.color;
+
   return (
     <main>
-      <Siteheader/>
+      <Siteheader />
       <ProductCard color={productColor} />
-      <RelatedProducts/>
-      <Footer/>
+      <RelatedProducts />
+      <Footer />
     </main>
-  )
+  );
 }
 
-export default ChekoutPage
+export default CheckoutPage;
+
