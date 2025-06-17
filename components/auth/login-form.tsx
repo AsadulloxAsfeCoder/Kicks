@@ -68,28 +68,28 @@ const LoginForm = () => {
       }) as AuthResponse | undefined
 
       if (!result) {
-        throw new Error("Serverdan javob kelmadi")
+        throw new Error("No response from the server.")
       }
 
       if (result.error) {
         form.setError("email", {
           type: "manual",
-          message: "Noto'g'ri email yoki parol",
+          message: "Incorrect email or password.",
         })
         form.setError("password", {
           type: "manual",
-          message: "Noto'g'ri email yoki parol",
+          message: "Incorrect email or password.",
         })
       } else if (result.ok) {
         router.push(callbackUrl)
       } else {
-        throw new Error("Autentifikatsiya muvaffaqiyatsiz tugadi")
+        throw new Error("Authentication failed.")
       }
     } catch (error) {
-      console.error("Kirish xatosi:", error)
+      console.error("Login error:", error)
       form.setError("root", {
         type: "manual",
-        message: "Tizimda xatolik yuz berdi. Iltimos, keyinroq urinib ko'ring.",
+        message: "A system error has occurred. Please try again later.",
       })
     } finally {
       setIsLoading(false)
@@ -103,12 +103,12 @@ const LoginForm = () => {
   return (
     <div className="space-y-6">
       <div className="space-y-2">
-        <h1 className="text-3xl font-bold">Tizimga kirish</h1>
+        <h1 className="text-3xl font-bold">Login to the system</h1>
         <Link
           href="/landing/auth/forget-password"
           className="text-sm text-neutral-800 hover:underline block"
         >
-          Parolingizni unutdingizmi?
+          Forgot your password?
         </Link>
       </div>
 
@@ -173,9 +173,9 @@ const LoginForm = () => {
                 </FormControl>
                 <div>
                   <Label htmlFor="rememberMe" className="text-sm font-normal">
-                    Meni eslab qol
+                   remember me
                   </Label>
-                  <p className="text-sm text-neutral-600">Qo'shimcha ma'lumot</p>
+                  <p className="text-sm text-neutral-600">Additional Information</p>
                 </div>
               </FormItem>
             )}
@@ -186,9 +186,9 @@ const LoginForm = () => {
             disabled={isLoading}
             className="w-full h-12 bg-neutral-900 hover:bg-black text-white flex justify-between items-center"
           >
-            <span className="sr-only">Tizimga kirish</span>
+            <span className="sr-only">Login to the system</span>
             <span className="mx-auto font-medium">
-              {isLoading ? "KIRILMOQDA..." : "EMAIL ORQALI KIRISH"}
+              {isLoading ? "ENTERING..." : "LOGIN BY EMAIL"}
             </span>
             <ArrowRight className="h-4 w-4" />
           </Button>
@@ -204,7 +204,7 @@ const LoginForm = () => {
                 onClick={() => handleSocialSignIn(provider)}
               >
                 <Image
-                  src={`/icons/${provider}.svg`}
+                  src={`/images/icons/${provider}.svg`}
                   alt={`${provider} logotipi`}
                   className="h-6 w-6"
                   width={24}
@@ -215,15 +215,14 @@ const LoginForm = () => {
           </div>
 
           <Link
-            href="/auth/register"
+            href="/landing/auth/register"
             className="text-sm text-neutral-800 hover:underline block"
-          >
-            Akkauntingiz yo'qmi? Ro'yxatdan o'ting
+          >Don't have an account? Sign up
           </Link>
 
           <p className="text-xs text-neutral-700 mt-4">
-            "Kirish" tugmasini bosish orqali siz Foydalanish shartlari, Maxfiylik siyosati va 
-            Shartlar & Qoidalarimizga rozilik bildirasiz.
+         By clicking "Sign In", you agree to our Terms of Use, Privacy Policy, and 
+          Terms & Conditions.
           </p>
         </form>
       </Form>

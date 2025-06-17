@@ -74,8 +74,8 @@ const RegisterForm = () => {
       const response = await AxiosInstance.post("/accounts/signup/", values)
       setCookie("email", values.email, { path: "/" })
 
-      toast.success("Ro'yxatdan o'tish muvaffaqiyatli", {
-        description: "Kicks ga xush kelibsiz! Hisobingiz yaratildi.",
+      toast.success("Registration successful", {
+        description: "Welcome to Kicks! Your account has been created.",
       })
 
       const result = await signIn("credentials", {
@@ -87,15 +87,15 @@ const RegisterForm = () => {
       if (result?.ok) {
         router.push("/dashboard")
       } else {
-        toast.error("Kirish muvaffaqiyatsiz", {
-          description: "Ro'yxatdan o'tishdan keyin kirish amalga oshmadi",
+        toast.error("Login failed", {
+          description: "Login failed after registration",
         })
       }
     } catch (error: any) {
-      console.error("API Xatosi:", error)
-      setApiError("Ro'yxatdan o'tish muvaffaqiyatsiz. Iltimos, qayta urunib ko'ring.")
-      toast.error("Ro'yxatdan o'tish muvaffaqiyatsiz", {
-        description: error.response?.data?.message || "Hisob yaratishda xatolik yuz berdi.",
+      console.error("API Error:", error)
+      setApiError("Registration failed. Please try again..")
+      toast.error("Registration failed.", {
+        description: error.response?.data?.message || "There was an error creating the account.",
       })
     } finally {
       setIsLoading(false)
@@ -105,9 +105,9 @@ const RegisterForm = () => {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-3xl font-bold">Ro'yxatdan o'tish</h1>
+        <h1 className="text-3xl font-bold">Sign up</h1>
         <Link href="/auth/login" className="hover:underline text-sm text-neutral-800">
-          Hisobingiz bormi? Kirish
+        Do you have an account? Log in
         </Link>
       </div>
       <Form {...form}>
@@ -120,7 +120,7 @@ const RegisterForm = () => {
                 render={({ field }) => (
                   <FormItem>
                     <FormControl>
-                      <Input placeholder="Ism" {...field} />
+                      <Input placeholder="Name" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -132,7 +132,7 @@ const RegisterForm = () => {
                 render={({ field }) => (
                   <FormItem>
                     <FormControl>
-                      <Input placeholder="Familiya" {...field} />
+                      <Input placeholder="Surname" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -189,7 +189,7 @@ const RegisterForm = () => {
                       <Input type="password" placeholder="Parol" {...field} />
                     </FormControl>
                     <p className="text-xs text-neutral-500 mt-1">
-                      Kamida 8 belgi, katta va kichik harflar, raqam va maxsus belgilar bo'lishi kerak.
+                    Must be at least 8 characters, uppercase and lowercase letters, numbers, and special characters.
                     </p>
                     <FormMessage />
                   </FormItem>
@@ -206,7 +206,7 @@ const RegisterForm = () => {
                     <Checkbox checked={field.value} onCheckedChange={field.onChange} />
                   </FormControl>
                   <Label className="text-sm">
-                    Men Foydalanish shartlari va Maxfiylik siyosatiga roziman.
+                  I agree to the Terms of Use and Privacy Policy.
                   </Label>
                   <FormMessage />
                 </FormItem>
@@ -221,7 +221,7 @@ const RegisterForm = () => {
                   <FormControl>
                     <Checkbox checked={field.value} onCheckedChange={field.onChange} />
                   </FormControl>
-                  <Label className="text-sm">Meni eslab qolish</Label>
+                  <Label className="text-sm">remember me</Label>
                 </FormItem>
               )}
             />
