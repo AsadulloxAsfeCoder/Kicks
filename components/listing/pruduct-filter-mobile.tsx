@@ -27,8 +27,6 @@ import { Button, buttonVariants } from "@/components/ui/button"
 import { ListFilter, X } from "lucide-react"
 import { cn } from "@/lib/utils"
 import ProductFilterCategory from "./product-filter-category"
-import ProductFilterSize from "./product-filter-size"
-import ProductFilterColor from "./product-filter-color"
 import ProductFilterGender from "./product-filter-gender"
 import ProductFilterPrice from "./product--filter-price"
 

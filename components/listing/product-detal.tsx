@@ -203,11 +203,11 @@ const ProductDetal = () => {
               >
                 ADD TO CART
               </button>
-              <Link href="#" className={cn(buttonVariants(), "w-[48px] h-[48px] text-white")}>
+              <Link href={`/landing/profile/wishlist`} className={cn(buttonVariants(), "w-[48px] h-[48px] text-white")}>
                 <Image src="/images/yurak.svg" alt="Heart" width={24} height={24} />
               </Link>
             </div>
-            <Link href="#" className={cn(buttonVariants({ variant: "blue" }), "w-[374px] h-[48px] text-white uppercase")}>
+            <Link href={`/landing/chekout`} className={cn(buttonVariants({ variant: "blue" }), "w-[374px] h-[48px] text-white uppercase")}>
               Buy it now
             </Link>
           </div>
@@ -346,11 +346,11 @@ const ProductDetal = () => {
             >
               ADD TO CART
             </button>
-            <Link href="#" className={cn(buttonVariants(), "w-[48px] h-[48px] text-white")}>
+            <Link href={`/landing/profile/wishlist`} className={cn(buttonVariants(), "w-[48px] h-[48px] text-white")}>
               <Image src="/images/yurak.svg" alt="Heart" width={24} height={24} />
             </Link>
           </div>
-          <Link href="#" className={cn(buttonVariants({ variant: "blue" }), "text-[14px] w-full font-med h-[48px] text-white uppercase")}>
+          <Link href={`/landing/chekout`} className={cn(buttonVariants({ variant: "blue" }), "text-[14px] w-full font-med h-[48px] text-white uppercase")}>
             Buy it now
           </Link>
         </div>

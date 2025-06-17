@@ -22,7 +22,7 @@ const dummyProducts: Product[] = [
   {
     id: 1,
     name: "ADIDAS 4DFWD X PARLEY RUNNING SHOES",
-    thumbnail: { file: "/krasofka.jpg" },
+    thumbnail: { file: "/images/krasofka.jpg" },
     price: 100,
     slug: "test-product-1",
     is_new: true,
@@ -31,7 +31,7 @@ const dummyProducts: Product[] = [
   {
     id: 2,
     name: "ADIDAS 4DFWD X PARLEY RUNNING SHOES",
-    thumbnail: { file: "/krasofka.jpg" },
+    thumbnail: { file: "/images/krasofka.jpg" },
     price: 100,
     slug: "test-product-2",
     is_new: true,
@@ -39,7 +39,7 @@ const dummyProducts: Product[] = [
   {
     id: 3,
     name: "ADIDAS 4DFWD X PARLEY RUNNING SHOES",
-    thumbnail: { file: "/krasofka.jpg" },
+    thumbnail: { file: "/images/krasofka.jpg" },
     price: 100,
     slug: "test-product-3",
     is_new: true,
@@ -48,7 +48,7 @@ const dummyProducts: Product[] = [
   {
     id: 4,
     name: "ADIDAS 4DFWD X PARLEY RUNNING SHOES",
-    thumbnail: { file: "/krasofka.jpg" },
+    thumbnail: { file: "/images/krasofka.jpg" },
     price: 100,
     slug: "test-product-4",
     is_new: true,
@@ -56,7 +56,7 @@ const dummyProducts: Product[] = [
   {
     id: 5,
     name: "ADIDAS 4DFWD X PARLEY RUNNING SHOES",
-    thumbnail: { file: "/krasofka.jpg" },
+    thumbnail: { file: "/images/krasofka.jpg" },
     price: 100,
     slug: "test-product-5",
     is_new: true,
@@ -64,7 +64,7 @@ const dummyProducts: Product[] = [
   {
     id: 6,
     name: "ADIDAS 4DFWD X PARLEY RUNNING SHOES",
-    thumbnail: { file: "/krasofka.jpg" },
+    thumbnail: { file: "/images/krasofka.jpg" },
     price: 100,
     slug: "test-product-6",
     is_new: true,
@@ -101,7 +101,7 @@ function ProductList() {
           {products.map((p) => (
             <div key={p.id} className="w-full">
               <ProductCard
-                image={p.thumbnail?.file || "/placeholder.png"}
+                image={p.thumbnail?.file || "/images/placeholder.png"}
                 title={p.name}
                 slug={p.slug}
                 price={p.price}
