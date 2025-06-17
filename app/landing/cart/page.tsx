@@ -4,19 +4,14 @@ import RelatedProducts from '@/components/listing/releted-product'
 import Footer from '@/components/ui/footer'
 import React from 'react'
 
-interface ProductDetailPageProps {
-  params: {
-    color: string;
-  };
-}
 
-function CheckoutPage({ params }: ProductDetailPageProps) {
-  const productColor = params.color;
+function CheckoutPage() {
+
 
   return (
     <main>
       <Siteheader />
-      <ProductCard color={productColor} />
+      <ProductCard  />
       <RelatedProducts />
       <Footer />
     </main>

@@ -22,7 +22,7 @@ interface ProductCardProps {
 
 interface Size {
   name: string;
-  // boshqa maydonlar...
+
 }
 
 interface CartItem {
@@ -40,7 +40,7 @@ const quantities = ["1", "2", "3", "4", "5", "6", "7"];
 const pricePerItem = 130;
 const deliveryFee = 6.99;
 
-function ProductCard({ color }: ProductCardProps) {
+function ProductCard() {
  const { isLoading: isSizeLoading, data: sizeData } = useSizes();
   const { addToCart } = useCart();
   const router = useRouter();
@@ -97,7 +97,6 @@ function ProductCard({ color }: ProductCardProps) {
       name: "DROPSET TRAINER SHOES",
       description: "Men's Road Running Shoes, Enamel Blue / University White",
       image: "/images/krasofka.jpg",
-      color:color,
     };
 
     addToCart(cartItem);
