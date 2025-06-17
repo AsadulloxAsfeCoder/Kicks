@@ -106,7 +106,7 @@ const RegisterForm = () => {
     <div className="space-y-6">
       <div>
         <h1 className="text-3xl font-bold">Sign up</h1>
-        <Link href="/landing/auth/login" className="hover:underline text-sm text-neutral-800">
+        <Link href={`/landing/auth/login`} className="hover:underline text-sm text-neutral-800">
         Do you have an account? Log in
         </Link>
       </div>

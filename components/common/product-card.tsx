@@ -43,7 +43,7 @@ const  ProductCard =({image,title,slug, price,priceColor,is_new
   </CardContent>
   <div className='relative bottom-[25px]'>
   <CardFooter className='p-0'>
-   <Link href="/landing/product/slug" 
+   <Link href={`/landing/product/slug`} 
    className={cn(buttonVariants(),"font-medium font-sans text-[10px] lg:text-sm uppercase w-full py-[13px] lg:py-[15px] h-[40px] lg:h-[48px]")}>
    View Product - 
    <span className={cn(priceColor && "text-yellow-500")}>${price.toFixed(2)}</span>

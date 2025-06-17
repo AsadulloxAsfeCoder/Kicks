@@ -23,7 +23,7 @@ const dummyProducts: Product[] = [
   {
     id: 1,
     name: "ADIDAS 4DFWD X PARLEY RUNNING SHOES",
-    thumbnail: { file: "/krasofka.jpg" },
+    thumbnail: { file: "/images/krasofka.jpg" },
     price: 125,
     slug: "/product/adidas-4dfwd-parley",
     is_new: true,
@@ -32,7 +32,7 @@ const dummyProducts: Product[] = [
   {
     id: 2,
     name: "ADIDAS 4DFWD X PARLEY RUNNING SHOES",
-    thumbnail: { file: "/krasofka.jpg" },
+    thumbnail: { file: "/images/krasofka.jpg" },
     price: 125,
     slug: "/product/adidas-4dfwd-parley-2",
     is_new: "true", // String example
@@ -40,7 +40,7 @@ const dummyProducts: Product[] = [
   {
     id: 3,
     name: "ADIDAS 4DFWD X PARLEY RUNNING SHOES",
-    thumbnail: { file: "/krasofka.jpg" },
+    thumbnail: { file: "/images/krasofka.jpg" },
     price: 125,
     slug: "/product/adidas-4dfwd-parley-3",
     is_new: true,
@@ -49,7 +49,7 @@ const dummyProducts: Product[] = [
   {
     id: 4,
     name: "ADIDAS 4DFWD X PARLEY RUNNING SHOES",
-    thumbnail: { file: "/krasofka.jpg" },
+    thumbnail: { file: "/images/krasofka.jpg" },
     price: 125,
     slug: "/product/adidas-4dfwd-parley-4",
     is_new: false, // Explicit false example
@@ -100,7 +100,7 @@ function RelatedProducts() {
           products.map((p) => (
             <ProductCard
               key={p.id}
-              image={p.thumbnail?.file || "/placeholder.png"}
+              image={p.thumbnail?.file || "/images/krasofka.jpg"}
               title={p.name}
               slug={p.slug}
               price={p.price}
@@ -139,7 +139,7 @@ function RelatedProducts() {
           products.map((p) => (
             <ProductCard
               key={p.id}
-              image={p.thumbnail?.file || "/placeholder.png"}
+              image={p.thumbnail?.file || "/images/placeholder.png"}
               title={p.name}
               slug={p.slug}
               price={p.price}
@@ -177,7 +177,7 @@ function RelatedProducts() {
           products.map((p) => (
             <ProductCard
               key={p.id}
-              image={p.thumbnail?.file || "/placeholder.png"}
+              image={p.thumbnail?.file || "/images/placeholder.png"}
               title={p.name}
               slug={p.slug}
               price={p.price}

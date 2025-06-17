@@ -46,12 +46,13 @@ export function MobileMenu() {
       
               </SheetDescription>
             </SheetHeader>
+            <Link href={`/landing/listing`}>
             <nav className="flex-1 py-4">
               <ul className="space-y-3">
                 <li>
                   <SheetClose asChild>
                     <Link
-                      href="/dew-drops"
+                      href="/landing/listing"
                       className="block py-2 text-lg font-medium transition-colors hover:text-primary"
                     >
                       Dew Drops
@@ -60,14 +61,14 @@ export function MobileMenu() {
                 </li>
                 <li>
                   <SheetClose asChild>
-                    <Link href="/men" className="block py-2 text-lg font-medium transition-colors hover:text-primary">
+                    <Link href={`/landing/listing`} className="block py-2 text-lg font-medium transition-colors hover:text-primary">
                       Men
                     </Link>
                   </SheetClose>
                 </li>
                 <li>
                   <SheetClose asChild>
-                    <Link href="/women" className="block py-2 text-lg font-medium transition-colors hover:text-primary">
+                    <Link href={`/landing/listing`} className="block py-2 text-lg font-medium transition-colors hover:text-primary">
                       Women
                     </Link>
                   </SheetClose>
@@ -75,6 +76,7 @@ export function MobileMenu() {
                 
               </ul>
             </nav>
+            </Link>
             <SheetFooter className="border-t pt-4">
               <SheetClose asChild>
                 <Button variant="outline" className="w-full">

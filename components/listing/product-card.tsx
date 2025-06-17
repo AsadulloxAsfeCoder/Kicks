@@ -9,7 +9,6 @@ import {
 } from "../ui/accordion";
 import { Checkbox } from "../ui/checkbox";
 import useSizes from "@/hooks/useSizes";
-import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "../ui/button";
 import { useCart } from "@/contexts/CartContext";

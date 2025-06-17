@@ -14,7 +14,7 @@ const dummyProducts = [
   {
     id: 1,
     name: "ADIDAS 4DFWD X PARLEY RUNNING SHOES",
-    thumbnail: { file: "/krasofka.jpg" },
+    thumbnail: { file: "/images/krasofka.jpg" },
     price: 100,
     slug: "/product/test-product-1",
     is_new: true,
@@ -23,7 +23,7 @@ const dummyProducts = [
   {
     id: 2,
     name: "ADIDAS 4DFWD X PARLEY RUNNING SHOES",
-    thumbnail: { file: "/krasofka.jpg" },
+    thumbnail: { file: "/images/krasofka.jpg" },
     price: 100,
     slug: "/product/test-product-1",
     is_new: true,
@@ -32,7 +32,7 @@ const dummyProducts = [
   {
     id: 3,
     name: "ADIDAS 4DFWD X PARLEY RUNNING SHOES",
-    thumbnail: { file: "/krasofka.jpg" },
+    thumbnail: { file: "/images/krasofka.jpg" },
     price: 100,
     slug: "/product/test-product-1",
     is_new: true,
@@ -41,7 +41,7 @@ const dummyProducts = [
   {
     id: 4,
     name: "ADIDAS 4DFWD X PARLEY RUNNING SHOES",
-    thumbnail: { file: "/krasofka.jpg" },
+    thumbnail: { file: "/images/krasofka.jpg" },
     price: 100,
     slug: "/product/test-product-1",
     is_new: true,

@@ -75,7 +75,7 @@ const ForgotPasswordForm = () => {
           </p>
         </div>
         <Link
-          href="/landing/auth/login"
+          href={`/landing/auth/login`}
           className="text-sm text-blue-600 hover:underline"
         >
           Back to login

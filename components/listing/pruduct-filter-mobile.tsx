@@ -32,8 +32,8 @@ import ProductFilterColor from "./product-filter-color"
 import ProductFilterGender from "./product-filter-gender"
 import ProductFilterPrice from "./product--filter-price"
 
-const fallbackSizes = ["42", "41", "39", "38", "43", "45", "44"]
-const fallbackColors = ["Red", "Blue", "White", "Black", "Pink", "Orange", "Yellow"]
+
+
 const fallbackCategories = [
   "Casual shoes", "Runners", "Hiking", "Sneaker", "Basketball", "Golf", "Outdoor"
 ]
@@ -47,8 +47,7 @@ const ProductFilterMobile = () => {
 
 
   const categories = categoriesData?.length ? categoriesData.map(c => c.name) : fallbackCategories
-  const sizes = sizeData?.length ? sizeData.map(s => s.value) : fallbackSizes
-  const colors = colorData?.length ? colorData.map(c => c.name) : fallbackColors
+ 
 
   const isInitialLoading = (isCatLoading && !categoriesData) ||
     (isSizeLoading && !sizeData) ||
@@ -62,7 +61,7 @@ const ProductFilterMobile = () => {
   })
 
   const handleCheckboxChange = (
-    type: 'categories' | 'sizes' | 'colors' | 'genders',
+    type: 'categories' | 'genders',
     value: string
   ) => {
     setSelectedFilters(prev => ({
@@ -98,12 +97,6 @@ const ProductFilterMobile = () => {
           <Accordion className="w-full p-5" type="multiple" >
             {/* Category */}
           <ProductFilterCategory/>
-          <hr className="border border-black opacity-10" />
-            {/* Sizes */}
-          <ProductFilterSize/>
-          <hr className="border border-black opacity-10" />
-            {/* Colors */}
-          <ProductFilterColor/>
           <hr className="border border-black opacity-10" />
             {/* Gender */}
           <ProductFilterGender/>

@@ -32,7 +32,7 @@ function CtegoriesCorusel() {
        <div className="flex flex-col justify-between p-4 lg:pl-12 lg:pr-[60px] lg:pb-[30px] bg-[#ECEEF0] rounded-tl-3xl lg:rounded-tl-[64px] w-full h-full">
           <Image
             className='w-2/3 object-center object-cover mx-auto'
-            src="/img.jpeg"
+            src="/images/img.jpeg"
             alt="img.jpeg"
             width={160}
             height={160}
@@ -47,7 +47,7 @@ function CtegoriesCorusel() {
      <div className="p-4 lg:pl-12 lg:pr-[60px]  overflow-hidden bg-[#F6F6F6] ">
           <Image
             className='w-2/3 object-center object-cover mx-auto'
-            src="/chatoq1.jpg"
+            src="/images/chatoq1.jpg"
             alt="img.jpeg"
             width={160}
             height={160}
@@ -64,7 +64,7 @@ function CtegoriesCorusel() {
        <div className="flex flex-col justify-between p-4 lg:pl-12 lg:pr-[60px] lg:pb-[30px] bg-[#ECEEF0] rounded-tl-3xl lg:rounded-tl-[64px] w-full h-full">
           <Image
             className='w-2/3 object-center object-cover mx-auto'
-            src="/img.jpeg"
+            src="/images/img.jpeg"
             alt="img.jpeg"
             width={160}
             height={160}
@@ -79,7 +79,7 @@ function CtegoriesCorusel() {
      <div className="p-4 lg:pl-12 lg:pr-[60px]  overflow-hidden bg-[#F6F6F6] ">
           <Image
             className='w-2/3 object-center object-cover mx-auto'
-            src="/chatoq1.jpg"
+            src="/images/chatoq1.jpg"
             alt="img.jpeg"
             width={160}
             height={160}
@@ -96,7 +96,7 @@ function CtegoriesCorusel() {
        <div className="flex flex-col justify-between p-4 lg:pl-12 lg:pr-[60px] lg:pb-[30px] bg-[#ECEEF0] rounded-tl-3xl lg:rounded-tl-[64px] w-full h-full">
           <Image
             className='w-2/3 object-center object-cover mx-auto'
-            src="/img.jpeg"
+            src="/images/img.jpeg"
             alt="img.jpeg"
             width={160}
             height={160}
@@ -111,7 +111,7 @@ function CtegoriesCorusel() {
      <div className="p-4 lg:pl-12 lg:pr-[60px]  overflow-hidden bg-[#F6F6F6] ">
           <Image
             className='w-2/3 object-center object-cover mx-auto'
-            src="/chatoq1.jpg"
+            src="/images/chatoq1.jpg"
             alt="img.jpeg"
             width={160}
             height={160}

@@ -105,7 +105,7 @@ const LoginForm = () => {
       <div className="space-y-2">
         <h1 className="text-3xl font-bold">Login to the system</h1>
         <Link
-          href="/landing/auth/forget-password"
+          href={`/landing/auth/forget-password`}
           className="text-sm text-neutral-800 hover:underline block"
         >
           Forgot your password?
@@ -215,7 +215,7 @@ const LoginForm = () => {
           </div>
 
           <Link
-            href="/landing/auth/register"
+            href={`/landing/auth/register`}
             className="text-sm text-neutral-800 hover:underline block"
           >Don't have an account? Sign up
           </Link>

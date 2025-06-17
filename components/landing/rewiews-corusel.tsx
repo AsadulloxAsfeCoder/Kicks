@@ -51,7 +51,7 @@ const ReviewsCarousel = () => {
               </CardHeader>
               <Image
                 className="w-full h-[300px] object-cover"
-                src="/revyu1.jpg"
+                src="/images/revyu1.jpg"
                 width={600}
                 height={300}
                 alt="Customer review"

@@ -28,7 +28,7 @@ const MainNav = () => {
           <NavigationMenuContent>
             <div className="p-4 w-[200px]">
               {/* Dropdown content for Men */}
-              <Link href="/landing/listing">
+              <Link href={`/landing/listing`}>
               <p className="text-sm p-2 hover:bg-gray-100 rounded">Shoes</p>
               <p className="text-sm p-2 hover:bg-gray-100 rounded">Clothing</p>
               <p className="text-sm p-2 hover:bg-gray-100 rounded">Accessories</p>

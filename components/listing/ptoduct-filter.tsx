@@ -22,12 +22,6 @@ function ProductFilter() {
        <hr className="border border-black opacity-10" />
        <ProductFilterCategory/>
        <hr className="border border-black opacity-10" />
-        {/* Size */}
-       <ProductFilterSize/>
-      <hr className="border border-black opacity-10" />
-        {/* Color */}
-       <ProductFilterColor/>
-          <hr className="border border-black opacity-10" />
         {/* Gender */}
        <ProductFilterGender/>
        <hr className="border border-black opacity-10" />
