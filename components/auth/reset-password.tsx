@@ -162,7 +162,7 @@ const ResetPasswordForm = () => {
 
           {/* Links */}
           <div className="text-center pt-4 space-y-1">
-            <Link href="/landing/auth/forgot-password" className="text-sm hover:underline block">
+            <Link href="/landing/auth/forge`t-password" className="text-sm hover:underline block">
               Forgot your password?
             </Link>
             <Link href="/landing/auth/login" className="text-sm hover:underline block">

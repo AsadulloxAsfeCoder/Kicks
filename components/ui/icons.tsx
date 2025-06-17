@@ -32,7 +32,7 @@ export const UserIcon=(props:React.ImgHTMLAttributes<HTMLImageElement>) => (
 
 
 
-// boshqa ikonkalaringiz ham shu faylda bo‘lishi mumkin
+
 export const SearchIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor">
     <circle cx="11" cy="11" r="8" />

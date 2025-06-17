@@ -25,21 +25,21 @@ import {
 } from "@/components/ui/form"
 
 const formSchema = z.object({
-  firstName: z.string().min(1, { message: "Ism kiritilishi shart" }),
-  lastName: z.string().min(1, { message: "Familiya kiritilishi shart" }),
+  firstName: z.string().min(1, { message: "Name is required." }),
+  lastName: z.string().min(1, { message: "Last name is required." }),
   gender: z.enum(["male", "female", "other"], {
-    required_error: "Jinsni tanlang",
+    required_error: "Select gender",
   }),
-  email: z.string().email({ message: "To'g'ri email kiriting" }),
+  email: z.string().email({ message: "Please enter a valid email." }),
   password: z
     .string()
-    .min(8, { message: "Parol kamida 8 belgidan iborat bo'lishi kerak" })
-    .regex(/[A-Z]/, { message: "Kamida 1 ta katta harf bo'lishi kerak" })
-    .regex(/[a-z]/, { message: "Kamida 1 ta kichik harf bo'lishi kerak" })
-    .regex(/[0-9]/, { message: "Kamida 1 ta raqam bo'lishi kerak" })
-    .regex(/[^A-Za-z0-9]/, { message: "Kamida 1 ta maxsus belgi bo'lishi kerak" }),
+    .min(8, { message: "Password must be at least 8 characters long" })
+    .regex(/[A-Z]/, { message: "Must contain at least 1 uppercase letter" })
+    .regex(/[a-z]/, { message: "Must contain at least 1 lowercase letter" })
+    .regex(/[0-9]/, { message: "Must contain at least 1 digit" })
+    .regex(/[^A-Za-z0-9]/, { message: "Must contain at least 1 special character" }),
   agreeTerms: z.boolean().refine((val) => val, {
-    message: "Foydalanish shartlariga rozilik berishingiz kerak",
+    message: "You must agree to the terms of use.",
   }),
   rememberMe: z.boolean().optional(),
 })
@@ -106,7 +106,7 @@ const RegisterForm = () => {
     <div className="space-y-6">
       <div>
         <h1 className="text-3xl font-bold">Sign up</h1>
-        <Link href="/auth/login" className="hover:underline text-sm text-neutral-800">
+        <Link href="/landing/auth/login" className="hover:underline text-sm text-neutral-800">
         Do you have an account? Log in
         </Link>
       </div>
@@ -145,7 +145,7 @@ const RegisterForm = () => {
               name="gender"
               render={({ field }) => (
                 <FormItem>
-                  <h2 className="text-base font-medium mb-2">Jins</h2>
+                  <h2 className="text-base font-medium mb-2">Sex</h2>
                   <div className="flex gap-6">
                     {["male", "female", "other"].map((gender) => (
                       <div key={gender} className="flex items-center">
@@ -157,7 +157,7 @@ const RegisterForm = () => {
                           className="mr-2 h-4 w-4"
                         />
                         <Label htmlFor={gender} className="text-sm capitalize">
-                          {gender === "male" ? "Erkak" : gender === "female" ? "Ayol" : "Boshqa"}
+                          {gender === "male" ? "Man" : gender === "female" ? "Woman" : "Other"}
                         </Label>
                       </div>
                     ))}

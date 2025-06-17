@@ -33,10 +33,10 @@ type AuthResponse = {
 const formSchema = z.object({
   email: z
     .string()
-    .email({ message: "Iltimos, to'g'ri email manzil kiriting" }),
+    .email({ message: "Please enter a valid email address." }),
   password: z
     .string()
-    .min(6, { message: "Parol kamida 6 ta belgidan iborat bo'lishi kerak" }),
+    .min(6, { message: "Password must be at least 6 characters long" }),
   rememberMe: z.boolean().optional(),
 })
 
@@ -205,7 +205,7 @@ const LoginForm = () => {
               >
                 <Image
                   src={`/images/icons/${provider}.svg`}
-                  alt={`${provider} logotipi`}
+                  alt={`${provider} logo`}
                   className="h-6 w-6"
                   width={24}
                   height={24}
@@ -220,7 +220,7 @@ const LoginForm = () => {
           >Don't have an account? Sign up
           </Link>
 
-          <p className="text-xs text-neutral-700 mt-4">
+          <p className="text-base font-semibold text-neutral-700 mt-4">
          By clicking "Sign In", you agree to our Terms of Use, Privacy Policy, and 
           Terms & Conditions.
           </p>
