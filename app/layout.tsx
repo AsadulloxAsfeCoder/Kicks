@@ -1,10 +1,15 @@
+// app/layout.tsx
+
+"use client"
+
 import { Rubik } from "next/font/google";
 import './styles/global.css';
-import RootProvider from "@/components/common/provider"; // Adjust this import path as needed
-import { Toaster } from 'sonner'; // or from your chosen toast library
+import RootProvider from "@/components/common/provider";
+import { Toaster } from 'sonner';
 import Siteheader from "@/components/common/site-header";
 import Footer from "@/components/ui/footer";
 import { CartProvider } from "@/contexts/CartContext";
+import { CookiesProvider } from "react-cookie"; // 🍪 SHU QATORNI QO‘SHING
 
 const rubik = Rubik({
   subsets: ["latin"],
@@ -25,12 +30,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`font-sans antialiased bg-gray-300 ${rubik.className}`}>
-        <RootProvider>
-       <CartProvider>
-          {children}
-          <Toaster />
-          </CartProvider>
-        </RootProvider>
+        <CookiesProvider> {/* 🍪 CookiesProvider bilan o‘raldi */}
+          <RootProvider>
+            <CartProvider>
+              {children}
+              <Toaster />
+            </CartProvider>
+          </RootProvider>
+        </CookiesProvider>
       </body>
     </html>
   );
