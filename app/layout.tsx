@@ -1,13 +1,7 @@
-// app/layout.tsx
-
-"use client"
-
 import { Rubik } from "next/font/google";
 import './styles/global.css';
 import RootProvider from "@/components/common/provider";
 import { Toaster } from 'sonner';
-import Siteheader from "@/components/common/site-header";
-import Footer from "@/components/ui/footer";
 import { CartProvider } from "@/contexts/CartContext";
 import { CookiesProvider } from "react-cookie"; // 🍪 SHU QATORNI QO‘SHING
 
