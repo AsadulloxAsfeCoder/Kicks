@@ -121,26 +121,19 @@ const ProductFilterMobile = () => {
             <Accordion className="w-full p-5" type="multiple">
               {/* Category */}
               <ProductFilterCategory 
-                selectedCategories={filters.categories}
-                onCategoryChange={(categories) => updateFilter('categories', categories)}
+             
               />
               <hr className="border border-black opacity-10" />
               
               {/* Gender */}
               <ProductFilterGender 
-                selectedGenders={filters.genders}
-                onGenderChange={(genders) => updateFilter('genders', genders)}
+             
               />
               <hr className="border border-black opacity-10" />
               
               {/* Price */}
               <ProductFilterPrice
-                minPrice={filters.minPrice}
-                maxPrice={filters.maxPrice}
-                onPriceChange={({min, max}) => {
-                  updateFilter('minPrice', min)
-                  updateFilter('maxPrice', max)
-                }}
+               
               />
               <hr className="border border-black opacity-10" />
             </Accordion>
